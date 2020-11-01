@@ -18,4 +18,8 @@ public abstract class GameLogic {
         return out;
     }
 
+    public static boolean checkOwinCon(JButton[][] buttons) {
+        return false;
+    }
+
 }

@@ -2,6 +2,8 @@ package TicTacToe;
 
 import TicTacToe.GUI.GameWindow;
 
+import javax.swing.*;
+
 public class Game {
 
     GameWindow gameWindow;
