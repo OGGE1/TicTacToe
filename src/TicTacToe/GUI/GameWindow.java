@@ -25,11 +25,13 @@ public class GameWindow extends JFrame {
         this.gl.setVgap(10);
         this.gl.setHgap(10);
         this.gamePanel.setLayout(gl);
+        this.gamePanel.setBackground(Color.gray);
+
+        //Fill the grid with a 2d array of JButtons
         this.buttons = GameLogic.fillGrid();
 
         this.menuPanel.add(resetButton);
 
-        
         this.mainPanel.setLayout(bl);
         this.mainPanel.add(gamePanel, BorderLayout.CENTER);
         this.mainPanel.add(menuPanel, BorderLayout.SOUTH);
@@ -53,5 +55,9 @@ public class GameWindow extends JFrame {
         }
         this.revalidate();
         this.repaint();
+    }
+
+    public JButton[][] getButtons() {
+        return buttons;
     }
 }

@@ -4,11 +4,16 @@ import TicTacToe.GUI.GameWindow;
 
 public class Game {
 
-    public static void init() {
-        GameWindow gameWindow = new GameWindow();
+    GameWindow gameWindow;
+    ActionListeners actionListeners;
+
+    public void init() {
+        gameWindow = new GameWindow();
+        actionListeners = new ActionListeners(gameWindow);
     }
 
     public static void main(String[] args) {
-        init();
+        Game game = new Game();
+        game.init();
     }
 }
