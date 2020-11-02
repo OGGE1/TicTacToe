@@ -41,6 +41,7 @@ public class GameWindow extends JFrame {
         this.add(mainPanel);
         this.setSize(new Dimension(600, 600));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
 
@@ -60,5 +61,9 @@ public class GameWindow extends JFrame {
 
     public JButton[][] getButtons() {
         return buttons;
+    }
+
+    public void setButtons(JButton[][] buttons) {
+        this.buttons = buttons;
     }
 }

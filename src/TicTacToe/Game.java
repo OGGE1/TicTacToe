@@ -9,13 +9,16 @@ public class Game {
     GameWindow gameWindow;
     ActionListeners actionListeners;
 
+    public Game() {
+        init();
+    }
+
     public void init() {
         gameWindow = new GameWindow();
         actionListeners = new ActionListeners(gameWindow);
     }
 
     public static void main(String[] args) {
-        Game game = new Game();
-        game.init();
+        new Game();
     }
 }

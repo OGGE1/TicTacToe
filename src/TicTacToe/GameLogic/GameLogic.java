@@ -48,8 +48,30 @@ public abstract class GameLogic {
         return false;
     }
 
-    public static boolean checkOwinCon(GameWindow gameWindow) {
-        
+    public static boolean checkOwinCon(GameWindow g) {
+        if (g.getButtons()[0][0].getText().equals(O) && g.getButtons()[0][1].getText().equals(O)
+                && g.getButtons()[0][2].getText().equals(O))
+            return true;
+        else if (g.getButtons()[1][0].getText().equals(O) && g.getButtons()[1][1].getText().equals(O)
+                && g.getButtons()[1][2].getText().equals(O))
+            return true;
+        else if (g.getButtons()[2][0].getText().equals(O) && g.getButtons()[2][1].getText().equals(O)
+                && g.getButtons()[2][2].getText().equals(O))
+            return true;
+        else if (g.getButtons()[0][2].getText().equals(O) && g.getButtons()[1][2].getText().equals(O)
+                && g.getButtons()[2][2].getText().equals(O))
+            return true;
+        else if (g.getButtons()[0][1].getText().equals(O) && g.getButtons()[1][1].getText().equals(O)
+                && g.getButtons()[2][1].getText().equals(O))
+            return true;
+        else if (g.getButtons()[0][0].getText().equals(O) && g.getButtons()[1][0].getText().equals(O)
+                && g.getButtons()[2][0].getText().equals(O))
+            return true;
+        else if (g.getButtons()[0][0].getText().equals(O) && g.getButtons()[1][1].getText().equals(O)
+                && g.getButtons()[2][2].getText().equals(O))
+            return true;
+
+        return false;
     }
 
 }

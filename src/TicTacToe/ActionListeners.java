@@ -3,6 +3,8 @@ package TicTacToe;
 import TicTacToe.GUI.GameWindow;
 import TicTacToe.GameLogic.GameLogic;
 
+import javax.swing.*;
+
 import static TicTacToe.Constants.*;
 
 public class ActionListeners {
@@ -26,14 +28,33 @@ public class ActionListeners {
                             Xused = false;
                         }
                     }
+                    if (GameLogic.checkOwinCon(gameWindow)) {
+                        int reply = JOptionPane.showConfirmDialog(null, "0 vann! Spela igen?", "0 vann", JOptionPane.YES_NO_OPTION);
+                        if(reply == 0) {
+                            gameWindow.dispose();
+                            new Game();
+                        } else
+                            System.exit(0);
+                    }
 
                     if (GameLogic.checkXwinCon(gameWindow)){
-                        System.out.println("You won!");
+                        int reply = JOptionPane.showConfirmDialog(null, "X vann! Spela igen?", "X vann", JOptionPane.YES_NO_OPTION);
+                        if(reply == 0) {
+                            gameWindow.dispose();
+                            new Game();
+                        } else
+                            System.exit(0);
                     }
 
                 });
             }
         }
     }
+
+//    public void newGame(GameWindow gameWindow) {
+//        gameWindow.setButtons(GameLogic.fillGrid());
+//        gameWindow.updateGUI();
+//        addActionListenersToArray(gameWindow);
+//    }
 
 }
