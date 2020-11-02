@@ -1,6 +1,7 @@
 package TicTacToe;
 
 import TicTacToe.GUI.GameWindow;
+import TicTacToe.GameLogic.GameLogic;
 
 import static TicTacToe.Constants.*;
 
@@ -24,6 +25,10 @@ public class ActionListeners {
                             gameWindow.getButtons()[r][c].setText(O);
                             Xused = false;
                         }
+                    }
+
+                    if (GameLogic.checkXwinCon(gameWindow)){
+                        System.out.println("You won!");
                     }
 
                 });
