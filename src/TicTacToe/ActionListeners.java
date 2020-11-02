@@ -11,6 +11,13 @@ public class ActionListeners {
 
     public ActionListeners(GameWindow gameWindow) {
         addActionListenersToArray(gameWindow);
+
+        gameWindow.getResetButton().addActionListener(l -> {
+            gameWindow.setButtons(GameLogic.fillGrid());
+            gameWindow.updateGUI();
+            addActionListenersToArray(gameWindow);
+            Xused = false;
+        });
     }
 
     public void addActionListenersToArray(GameWindow gameWindow) {
@@ -31,8 +38,9 @@ public class ActionListeners {
                     if (GameLogic.checkOwinCon(gameWindow)) {
                         int reply = JOptionPane.showConfirmDialog(null, "0 vann! Spela igen?", "0 vann", JOptionPane.YES_NO_OPTION);
                         if(reply == 0) {
-                            gameWindow.dispose();
-                            new Game();
+                            gameWindow.setButtons(GameLogic.fillGrid());
+                            gameWindow.updateGUI();
+                            addActionListenersToArray(gameWindow);
                         } else
                             System.exit(0);
                     }
@@ -40,8 +48,9 @@ public class ActionListeners {
                     if (GameLogic.checkXwinCon(gameWindow)){
                         int reply = JOptionPane.showConfirmDialog(null, "X vann! Spela igen?", "X vann", JOptionPane.YES_NO_OPTION);
                         if(reply == 0) {
-                            gameWindow.dispose();
-                            new Game();
+                            gameWindow.setButtons(GameLogic.fillGrid());
+                            gameWindow.updateGUI();
+                            addActionListenersToArray(gameWindow);
                         } else
                             System.exit(0);
                     }
@@ -50,11 +59,4 @@ public class ActionListeners {
             }
         }
     }
-
-//    public void newGame(GameWindow gameWindow) {
-//        gameWindow.setButtons(GameLogic.fillGrid());
-//        gameWindow.updateGUI();
-//        addActionListenersToArray(gameWindow);
-//    }
-
 }

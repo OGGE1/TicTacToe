@@ -66,4 +66,8 @@ public class GameWindow extends JFrame {
     public void setButtons(JButton[][] buttons) {
         this.buttons = buttons;
     }
+
+    public JButton getResetButton() {
+        return resetButton;
+    }
 }
